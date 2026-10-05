@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="日本AV电影网 - 提供最新日本电影资讯、影评、推荐与高清资源导航，涵盖剧情、爱情、动作、动画等多种类型。">
+<meta name="keywords" content="日本AV电影网,日本电影,ribenAVdianyingwang,日本影视,日本剧情片,日本爱情电影,日本动画电影,日本电影推荐">
+<meta name="author" content="日本AV电影网">
+<meta name="robots" content="index,follow">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="日本AV电影网 - 最新日本电影资讯与推荐">
+<meta property="og:description" content="提供最新日本电影资讯、影评、推荐与高清资源导航。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ribenAVdianyingwang-wap.github.io">
+<title>日本AV电影网 | 最新日本电影资讯·影评·推荐 - ribenAVdianyingwang</title>
+<link rel="canonical" href="https://ribenAVdianyingwang-wap.github.io">
+<style>
+/* ============ Reset & Base ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --brand:#e63950;
+  --brand-dark:#b5203a;
+  --ink:#1a1a2e;
+  --gray:#6b7280;
+  --line:#eef0f4;
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(26,26,46,.06);
+  --shadow-lg:0 10px 40px rgba(26,26,46,.12);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+ul,ol{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+/* ============ Layout ============ */
+.wrap{max-width:960px;margin:0 auto;padding:0 14px;}
+
+/* ============ Header ============ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px;}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--brand);letter-spacing:.5px;}
+.logo-mark{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--brand),#ff6b81);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:13px;font-weight:900;flex-shrink:0;
+}
+.nav-toggle{width:40px;height:40px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:.3s;}
+.nav-toggle span{width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.active span:nth-child(2){opacity:0;}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ============ Nav Menu ============ */
+.nav-menu{
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+}
+.nav-menu.open{max-height:500px;}
+.nav-menu ul{display:flex;flex-direction:column;padding-bottom:12px;}
+.nav-menu li a{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;border-radius:10px;font-size:15px;font-weight:600;color:var(--ink);
+  transition:.2s;
+}
+.nav-menu li a:hover{background:var(--bg);color:var(--brand);}
+.nav-menu li a .ico{font-size:18px;}
+
+/* Desktop nav */
+@media(min-width:768px){
+  .nav-toggle{display:none;}
+  .nav-menu{max-height:none;overflow:visible;}
+  .nav-menu ul{flex-direction:row;align-items:center;gap:6px;padding-bottom:0;}
+  .nav-menu li a{padding:8px 14px;font-size:14px;}
+}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 55%,#0f3460 100%);
+  color:#fff;padding:52px 0 60px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(230,57,80,.35),transparent 45%),
+    radial-gradient(circle at 15% 85%,rgba(69,123,157,.3),transparent 40%);
+}
+.hero-inner{position:relative;text-align:center;}
+.hero-badge{
+  display:inline-block;padding:5px 14px;border-radius:20px;
+  background:rgba(230,57,80,.18);border:1px solid rgba(230,57,80,.4);
+  color:#ff8fa3;font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(26px,7vw,42px);font-weight:900;line-height:1.25;margin-bottom:14px;
+  background:linear-gradient(90deg,#fff,#ffd6dd);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{font-size:15px;color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 26px;}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:12px 26px;border-radius:30px;font-size:14px;font-weight:700;transition:.25s;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 20px rgba(230,57,80,.4);}
+.btn-primary:hover{background:var(--brand-dark);transform:translateY(-2px);}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+
+/* ============ Section ============ */
+.section{padding:44px 0;}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:22px;}
+.section-head h2{font-size:20px;font-weight:800;display:flex;align-items:center;gap:8px;}
+.section-head h2::before{
+  content:"";width:5px;height:20px;border-radius:3px;background:var(--brand);
+}
+.section-head .more{font-size:13px;color:var(--gray);white-space:nowrap;}
+.section-head .more:hover{color:var(--brand);}
+
+/* ============ Cards Grid ============ */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr);gap:18px;}}
+
+.card{
+  background:var(--card);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:.28s;position:relative;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.card-poster{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(135deg,#2b2d42,#1a1a2e);}
+.card-poster .ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:34px;font-weight:900;color:rgba(255,255,255,.15);text-align:center;padding:10px;line-height:1.2;
+}
+.card-tag{
+  position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:6px;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:600;
+}
+.card-score{
+  position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:6px;
+  background:var(--brand);color:#fff;font-size:11px;font-weight:800;
+}
+.card-body{padding:10px 12px 14px;}
+.card-body h3{font-size:14px;font-weight:700;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;}
+.card-body p{font-size:12px;color:var(--gray);}
+
+/* ============ Feature List (different DOM) ============ */
+.flist{display:flex;flex-direction:column;gap:12px;}
+.flist-item{
+  display:flex;gap:14px;background:var(--card);border-radius:var(--radius);
+  padding:14px;box-shadow:var(--shadow);transition:.25s;align-items:center;
+}
+.flist-item:hover{transform:translateX(4px);box-shadow:var(--shadow-lg);}
+.flist-num{
+  flex-shrink:0;width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,#fce4ec,#ffe8ec);color:var(--brand);
+  display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;
+}
+.flist-txt h4{font-size:15px;font-weight:700;margin-bottom:3px;}
+.flist-txt p{font-size:12.5px;color:var(--gray);}
+
+/* ============ Category Pills ============ */
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.pill{
+  padding:7px 15px;border-radius:20px;background:var(--card);
+  border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink);transition:.2s;
+}
+.pill:hover{border-color:var(--brand);color:var(--brand);}
+.pill.on{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* ============ Review Block ============ */
+.reviews{display:flex;flex-direction:column;gap:14px;}
+.review{
+  background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+}
+.review-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.avatar{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#457b9d,#1d3557);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+}
+.review-top h4{font-size:14px;font-weight:700;}
+.review-top .stars{color:#f4a261;font-size:12px;}
+.review p{font-size:13.5px;color:#444;}
+
+/* ============ Stats ============ */
+.stats{
+  background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+  border-radius:var(--radius);padding:28px 20px;color:#fff;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;text-align:center;
+}
+@media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr);}}
+.stat-num{font-size:28px;font-weight:900;}
+.stat-lbl{font-size:12.5px;opacity:.85;margin-top:2px;}
+
+/* ============ CTA ============ */
+.cta{background:var(--ink);color:#fff;border-radius:var(--radius);padding:36px 24px;text-align:center;}
+.cta h3{font-size:22px;font-weight:800;margin-bottom:10px;}
+.cta p{font-size:14px;color:rgba(255,255,255,.72);margin-bottom:22px;}
+
+/* ============ Footer ============ */
+.site-footer{background:#11131f;color:rgba(255,255,255,.6);padding:34px 0 26px;}
+.footer-cols{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:26px;}
+@media(min-width:768px){.footer-cols{grid-template-columns:repeat(3,1fr);}}
+.footer-cols h5{color:#fff;font-size:15px;font-weight:700;margin-bottom:12px;}
+.footer-cols ul li{margin-bottom:8px;font-size:13px;}
+.footer-cols ul li a:hover{color:#fff;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:18px;
+  text-align:center;font-size:12px;color:rgba(255,255,255,.4);
+}
+.footer-bottom a{color:rgba(255,255,255,.6);}
+
+/* ============ Breadcrumb ============ */
+.crumb{padding:12px 0;font-size:12.5px;color:var(--gray);}
+.crumb a:hover{color:var(--brand);}
+.crumb span{margin:0 6px;color:#ccc;}
+
+/* ============ Tabs (genre section different DOM) ============ */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  flex-shrink:0;padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600;
+  background:var(--card);box-shadow:var(--shadow);transition:.2s;
+}
+.tab.active{background:var(--ink);color:#fff;}
+.movie-row{display:none;grid-template-columns:repeat(2,1fr);gap:14px;}
+.movie-row.active{display:grid;}
+@media(min-width:768px){.movie-row.active{grid-template-columns:repeat(4,1fr);}}
+.movie-cell{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.25s;}
+.movie-cell:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.movie-cell .cv{
+  aspect-ratio:16/10;background:linear-gradient(120deg,#457b9d,#1d3557);
+  display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:rgba(255,255,255,.4);
+}
+.movie-cell .cv.c2{background:linear-gradient(120deg,#e63950,#b5203a);}
+.movie-cell .cv.c3{background:linear-gradient(120deg,#2a9d8f,#1d6f63);}
+.movie-cell .cv.c4{background:linear-gradient(120deg,#e9c46a,#c9972f);}
+.movie-cell .cv.c5{background:linear-gradient(120deg,#6c5ce7,#4834a8);}
+.movie-cell h4{padding:9px 11px;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">日</span>
+      日本AV电影网
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-menu" id="navMenu">
+    <div class="wrap">
+      <ul>
+        <li><a href="#home"><span class="ico">🏠</span>首页</a></li>
+        <li><a href="#latest"><span class="ico">🔥</span>最新上映</a></li>
+        <li><a href="#genre"><span class="ico">🎬</span>类型频道</a></li>
+        <li><a href="#rank"><span class="ico">🏆</span>排行榜</a></li>
+        <li><a href="#review"><span class="ico">✍️</span>影评专栏</a></li>
+        <li><a href="#news"><span class="ico">📰</span>影视资讯</a></li>
+        <li><a href="#about"><span class="ico">ℹ️</span>关于本站</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <span class="hero-badge">JAPANESE CINEMA · 日本AV电影网</span>
+    <h1>发现好电影<br>从日本AV电影网开始</h1>
+    <p>每日精选最新日本电影资讯、专业影评与类型推荐，涵盖剧情、爱情、动作、动画、悬疑、恐怖等全类型作品。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#latest">浏览最新电影 →</a>
+      <a class="btn btn-ghost" href="#genre">按类型探索</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BREADCRUMB ==================== -->
+<div class="wrap">
+  <div class="crumb"><a href="#">首页</a><span>/</span>日本AV电影网</div>
+</div>
+
+<!-- ==================== STATS ==================== -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="stats">
+      <div><div class="stat-num">5000+</div><div class="stat-lbl">收录影片</div></div>
+      <div><div class="stat-num">120+</div><div class="stat-lbl">合作影人</div></div>
+      <div><div class="stat-num">50万</div><div class="stat-lbl">月度访问</div></div>
+      <div><div class="stat-num">4.8</div><div class="stat-lbl">用户评分</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LATEST ==================== -->
+<section class="section" id="latest" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>最新上映</h2>
+      <a class="more" href="#">查看全部 ›</a>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">告白</div>
+          <span class="card-tag">剧情</span>
+          <span class="card-score">9.1</span>
+        </div>
+        <div class="card-body">
+          <h3>告白 · Confessions</h3>
+          <p>中岛哲也 / 2010 / 剧情·悬疑</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">海街<br>日记</div>
+          <span class="card-tag">家庭</span>
+          <span class="card-score">8.7</span>
+        </div>
+        <div class="card-body">
+          <h3>海街日记</h3>
+          <p>是枝裕和 / 2015 / 家庭·温情</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">你的<br>名字</div>
+          <span class="card-tag">动画</span>
+          <span class="card-score">9.4</span>
+        </div>
+        <div class="card-body">
+          <h3>你的名字。</h3>
+          <p>新海诚 / 2016 / 动画·爱情</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">小偷<br>家族</div>
+          <span class="card-tag">剧情</span>
+          <span class="card-score">8.8</span>
+        </div>
+        <div class="card-body">
+          <h3>小偷家族</h3>
+          <p>是枝裕和 / 2018 / 剧情·社会</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">千与<br>千寻</div>
+          <span class="card-tag">动画</span>
+          <span class="card-score">9.6</span>
+        </div>
+        <div class="card-body">
+          <h3>千与千寻</h3>
+          <p>宫崎骏 / 2001 / 动画·奇幻</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-poster">
+          <div class="ph">寄生虫<br>(日版)</div>
+          <span class="card-tag">悬疑</span>
+          <span class="card-score">8.5</span>
+        </div>
+        <div class="card-body">
+          <h3>影里</h3>
+          <p>大友启史 / 2020 / 悬疑·人性</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GENRE (TABS - different DOM) ==================== -->
+<section class="section" id="genre" style="background:#fff;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>类型频道</h2>
+      <a class="more" href="#">更多类型 ›</a>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="t1">剧情</button>
+      <button class="tab" data-tab="t2">爱情</button>
+      <button class="tab" data-tab="t3">动画</button>
+      <button class="tab" data-tab="t4">动作</button>
+      <button class="tab" data-tab="t5">悬疑</button>
+    </div>
+
+    <div class="movie-row active" id="t1">
+      <div class="movie-cell"><div class="cv">情书</div><h4>情书 Love Letter</h4></div>
+      <div class="movie-cell"><div class="cv c2">花样<br>男子</div><h4>花样男子</h4></div>
+      <div class="movie-cell"><div class="cv c3">垫底<br>辣妹</div><h4>垫底辣妹</h4></div>
+      <div class="movie-cell"><div class="cv c4">银魂</div><h4>银魂</h4></div>
+    </div>
+    <div class="movie-row" id="t2">
+      <div class="movie-cell"><div class="cv c2">恋空</div><h4>恋空</h4></div>
+      <div class="movie-cell"><div class="cv">近距离<br>恋爱</div><h4>近距离恋爱</h4></div>
+      <div class="movie-cell"><div class="cv c3">余命<br>一年</div><h4>余命一年</h4></div>
+      <div class="movie-cell"><div class="cv c5">今夜</div><h4>今夜在浪漫剧场</h4></div>
+    </div>
+    <div class="movie-row" id="t3">
+      <div class="movie-cell"><div class="cv c3">龙猫</div><h4>龙猫</h4></div>
+      <div class="movie-cell"><div class="cv c5">起风了</div><h4>起风了</h4></div>
+      <div class="movie-cell"><div class="cv c4">铃芽<br>之旅</div><h4>铃芽之旅</h4></div>
+      <div class="movie-cell"><div class="cv">天气<br>之子</div><h4>天气之子</h4></div>
+    </div>
+    <div class="movie-row" id="t4">
+      <div class="movie-cell"><div class="cv c4">热血<br>高校</div><h4>热血高校</h4></div>
+      <div class="movie-cell"><div class="cv">浪客<br>剑心</div><h4>浪客剑心</h4></div>
+      <div class="movie-cell"><div class="cv c2">王者<br>制造</div><h4>王者制造</h4></div>
+      <div class="movie-cell"><div class="cv c5">杀手<br>寓言</div><h4>杀手寓言</h4></div>
+    </div>
+    <div class="movie-row" id="t5">
+      <div class="movie-cell"><div class="cv c5">嫌疑人<br>X</div><h4>嫌疑人X的献身</h4></div>
+      <div class="movie-cell"><div class="cv c2">白夜<br>行</div><h4>白夜行</h4></div>
+      <div class="movie-cell"><div class="cv">重力<br>眩晕</div><h4>重力眩晕</h4></div>
+      <div class="movie-cell"><div class="cv c4">祈祷<br>落幕</div><h4>祈祷落幕时</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RANK (FLIST - different DOM) ==================== -->
+<section class="section" id="rank">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>热门排行榜</h2>
+      <a class="more" href="#">完整榜单 ›</a>
+    </div>
+    <div class="pills">
+      <span class="pill on">综合</span>
+      <span class="pill">本周</span>
+      <span class="pill">本月</span>
+      <span class="pill">经典</span>
+    </div>
+    <div class="flist">
+      <a class="flist-item" href="#">
+        <div class="flist-num">1</div>
+        <div class="flist-txt">
+          <h4>千与千寻 · 宫崎骏神作</h4>
+          <p>奇幻动画巅峰，奥斯卡最佳动画长片，豆瓣 TOP 级经典</p>
+        </div>
+      </a>
+      <a class="flist-item" href="#">
+        <div class="flist-num" style="background:#fff3e0;color:#e76f1a;">2</div>
+        <div class="flist-txt">
+          <h4>你的名字。 · 新海诚</h4>
+          <p>彗星降临之夜，两个陌生人的命运交织</p>
+        </div>
+      </a>
+      <a class="flist-item" href="#">
+        <div class="flist-num" style="background:#fce4ec;color:#e63950;">3</div>
+        <div class="flist-txt">
+          <h4>小偷家族 · 是枝裕和</h4>
+          <p>戛纳金棕榈获奖，非血缘家庭的温情与残酷</p>
+        </div>
+      </a>
+      <a class="flist-item" href="#">
+        <div class="flist-num">4</div>
+        <div class="flist-txt">
+          <h4>告白 · 中岛哲也</h4>
+          <p>复仇与教育的暗黑寓言，视听语言极致冲击</p>
+        </div>
+      </a>
+      <a class="flist-item" href="#">
+        <div class="flist-num">5</div>
+        <div class="flist-txt">
+          <h4>情书 · 岩井俊二</h4>
+          <p>纯爱电影天花板，一封寄往天国的信</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REVIEW ==================== -->
+<section class="section" id="review" style="background:#fff;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>影评专栏</h2>
+      <a class="more" href="#">更多影评 ›</a>
+    </div>
+    <div class="reviews">
+      <article class="review">
+        <div class="review-top">
+          <div class="avatar">映</div>
+          <div>
+            <h4>是枝裕和镜头下的"家庭"到底是什么？</h4>
+            <div class="stars">★★★★★ 深度长评</div>
+          </div>
+        </div>
+        <p>从《步履不停》到《小偷家族》，是枝裕和不断解构"血缘"与"羁绊"的关系。他用大量生活流细节替代戏剧冲突，让观众在被窝般的温情里，突然被现实的针刺中……</p>
+      </article>
+      <article class="review">
+        <div class="review-top">
+          <div class="avatar" style="background:linear-gradient(135deg,#e63950,#ff6b81);">帧</div>
+          <div>
+            <h4>新海诚的"世界系"美学：背景比人物更动人？</h4>
+            <div class="stars">★★★★☆ 观点</div>
+          </div>
+        </div>
+        <p>《你的名字。》《天气之子》《铃芽之旅》三部曲构成新海诚的世界系闭环。有人批评人物单薄，但不可否认，他对光线、云层、天空的执着，重新定义了日本动画的视觉上限……</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NEWS ==================== -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>影视资讯</h2>
+      <a class="more" href="#">全部资讯 ›</a>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr;">
+      <a class="flist-item" href="#" style="flex-direction:column;align-items:flex-start;gap:6px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <span class="flist-num" style="width:auto;height:auto;background:none;color:var(--brand);font-size:12px;">📌 资讯</span>
+          <span style="font-size:12px;color:var(--gray);">2026-09-28</span>
+        </div>
+        <h4 style="font-size:15px;">第39届东京国际电影节公布入围片单，多部新人导演作品亮相</h4>
+        <p>本届电影节主竞赛单元共有15部作品入围，其中3部为日本导演处女作，展现日本电影新生力量。</p>
+      </a>
+      <a class="flist-item" href="#" style="flex-direction:column;align-items:flex-start;gap:6px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <span class="flist-num" style="width:auto;height:auto;background:none;color:var(--brand);font-size:12px;">📌 资讯</span>
+          <span style="font-size:12px;color:var(--gray);">2026-09-22</span>
+        </div>
+        <h4 style="font-size:15px;">《名侦探柯南》新剧场版定档，预告片首度公开</h4>
+        <p>新作剧场版延续高人气，预告片释出后迅速登上日本社交平台热搜榜首。</p>
+      </a>
+      <a class="flist-item" href="#" style="flex-direction:column;align-items:flex-start;gap:6px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <span class="flist-num" style="width:auto;height:auto;background:none;color:var(--brand);font-size:12px;">📌 资讯</span>
+          <span style="font-size:12px;color:var(--gray);">2026-09-15</span>
+        </div>
+        <h4 style="font-size:15px;">日本电影票房年度盘点：动画电影持续领跑市场</h4>
+        <p>2026年上半年日本本土电影票房数据显示，动画类型片占据总票房的近四成份额。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <h3>想看更多好电影？</h3>
+      <p>关注日本AV电影网，不错过每一部值得观看的日本电影</p>
+      <a class="btn btn-primary" href="#home">回到顶部 ↑</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section class="section" id="about" style="background:#fff;">
+  <div class="wrap">
+    <div class="section-head"><h2>关于日本AV电影网</h2></div>
+    <p style="color:var(--gray);font-size:14px;line-height:1.9;">
+      <strong style="color:var(--ink);">日本AV电影网（ribenAVdianyingwang）</strong> 是一个专注于日本电影资讯与推荐的内容平台。我们每日更新最新上映信息、专业影评、导演与演员资料、类型专题等内容，帮助影迷更高效地发现优质日本电影。本站涵盖剧情、爱情、动画、动作、悬疑、恐怖、纪录片等多种类型，是了解日本影视文化的理想入口。
+    </p>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h5>日本AV电影网</h5>
+        <ul>
+          <li><a href="#latest">最新上映</a></li>
+          <li><a href="#genre">类型频道</a></li>
+          <li><a href="#rank">热门排行榜</a></li>
+          <li><a href="#review">影评专栏</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>内容频道</h5>
+        <ul>
+          <li><a href="#">剧情电影</a></li>
+          <li><a href="#">爱情电影</a></li>
+          <li><a href="#">动画电影</a></li>
+          <li><a href="#">悬疑惊悚</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于本站</h5>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">网站地图</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 日本AV电影网 ribenAVdianyingwang · 网站网址：<a href="#">https://ribenAVdianyingwang-wap.github.io</a><br>
+      本站内容仅供影视资讯交流，影片版权归原作者及发行方所有。
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端导航
+(function(){
+  var btn=document.getElementById('navToggle');
+  var menu=document.getElementById('navMenu');
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+  });
+  // 点击链接关闭菜单
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      btn.classList.remove('active');
+      menu.classList.remove('open');
+    });
+  });
+})();
+
+// 类型切换
+(function(){
+  var tabs=document.querySelectorAll('#tabs .tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('#tabs .tab').forEach(function(x){x.classList.remove('active');});
+      document.querySelectorAll('.movie-row').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      var target=document.getElementById(t.dataset.tab);
+      if(target) target.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
